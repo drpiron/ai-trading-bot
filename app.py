@@ -1,3 +1,4 @@
+
 import yfinance as yf
 import numpy as np
 import pandas as pd
@@ -10,9 +11,10 @@ st.set_page_config(page_title="AI Trading Bot", layout="wide")
 
 names = ["Demo User"]
 usernames = ["demo"]
-passwords = ["demo123"]
 
-hashed_passwords = stauth.Hasher(passwords).generate()
+hashed_passwords = {
+    "demo": "$2b$12$KIXuPMQXUQmYpjpMF5FiUOlbgLTy1MsoBv9v7pyEakzgy/q5AUWYi"
+}
 
 authenticator = stauth.Authenticate(names, usernames, hashed_passwords, "trading_dashboard", "abcdef", cookie_expiry_days=1)
 
